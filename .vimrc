@@ -17,9 +17,9 @@ runtime! debian.vim
 
 " Vim5 and later versions support syntax highlighting. Uncommenting the
 " following enables syntax highlighting by default.
-if has("syntax")
-  syntax on
-endif
+"if has("syntax")
+"  syntax on
+"endif
 
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
@@ -66,11 +66,20 @@ filetype off
 if has('vim_starting')
 	set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
-call neobundle#rc(expand('~/.bundle'))
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+NeoBundle 'Shougo/vimproc'
 
 NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
 NeoBundle 'git://github.com/Shougo/unite.vim.git'
 NeoBundle 'git://github.com/kchmck/vim-coffee-script.git'
+NeoBundle 'git://github.com/othree/html5.vim.git'
+NeoBundle 'git://github.com/mattn/zencoding-vim.git'
+
+"go vim
+set rtp+=$GOHOME/misc/vim
 
 filetype plugin on
 filetype indent on
+syntax on
+
